@@ -1,4 +1,4 @@
-class API::V1::InventoriedProductsController < ApplicationController
+class Api::V1::InventoriedProductsController < ApplicationController
   before_action :set_inventoried_product, only: [:show, :update, :destroy]
 
   # GET /inventoried_products

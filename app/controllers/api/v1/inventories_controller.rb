@@ -1,4 +1,4 @@
-class API::V1::InventoriesController < ApplicationController
+class Api::V1::InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :update, :destroy]
 
   # GET /inventories
