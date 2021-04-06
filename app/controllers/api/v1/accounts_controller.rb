@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class API::V1::AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update, :destroy]
 
   # GET /accounts
