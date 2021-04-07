@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+
   namespace :api do 
     namespace :v1 do 
-      resources :inventoried_products
+      resources :recordeds
       resources :products
       resources :inventories
       resources :accounts

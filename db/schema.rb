@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_143645) do
+ActiveRecord::Schema.define(version: 2021_04_07_201213) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -20,17 +20,6 @@ ActiveRecord::Schema.define(version: 2021_04_06_143645) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["region_id"], name: "index_accounts_on_region_id"
-  end
-
-  create_table "inventoried_products", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "inventory_id", null: false
-    t.float "quantity"
-    t.float "cost"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["inventory_id"], name: "index_inventoried_products_on_inventory_id"
-    t.index ["product_id"], name: "index_inventoried_products_on_product_id"
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -50,6 +39,17 @@ ActiveRecord::Schema.define(version: 2021_04_06_143645) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "recordeds", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "inventory_id", null: false
+    t.float "quantity"
+    t.float "cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["inventory_id"], name: "index_recordeds_on_inventory_id"
+    t.index ["product_id"], name: "index_recordeds_on_product_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_143645) do
   end
 
   add_foreign_key "accounts", "regions"
-  add_foreign_key "inventoried_products", "inventories"
-  add_foreign_key "inventoried_products", "products"
   add_foreign_key "inventories", "accounts"
+  add_foreign_key "recordeds", "inventories"
+  add_foreign_key "recordeds", "products"
 end

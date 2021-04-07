@@ -5,12 +5,12 @@ class Api::V1::RegionsController < ApplicationController
   def index
     @regions = Region.all
 
-    render json: @regions
+    render json: @regions.arr_to_json
   end
 
   # GET /regions/1
   def show
-    render json: @region
+    render json: @region.instance_to_json
   end
 
   # POST /regions
