@@ -10,6 +10,7 @@ class Recorded < ApplicationRecord
 
   def instance_to_json
       {   id: self.id,
+          category: self.product.category,
           product_name: self.product.name,
           product_price: self.product.price,
           quantity: self.quantity,

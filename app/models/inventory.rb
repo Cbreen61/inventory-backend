@@ -13,7 +13,7 @@ class Inventory < ApplicationRecord
       {   id: self.id,
           name: self.name,
           date: self.date,
-          inventory: self.recordeds.arrr_to_json
+          inventory_items: self.recordeds.arrr_to_json
       }
   end
 
