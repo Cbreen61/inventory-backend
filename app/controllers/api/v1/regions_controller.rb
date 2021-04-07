@@ -1,4 +1,4 @@
-class Api::RegionsController < ApplicationController
+class Api::V1::RegionsController < ApplicationController
   before_action :set_region, only: [:show, :update, :destroy]
 
   # GET /regions
