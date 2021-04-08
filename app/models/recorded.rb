@@ -9,7 +9,8 @@ class Recorded < ApplicationRecord
   end
 
   def instance_to_json
-      {   id: self.id,
+      {   inventory_id: self.inventory.id,
+          id: self.id,
           category: self.product.category,
           product_name: self.product.name,
           product_price: self.product.price,

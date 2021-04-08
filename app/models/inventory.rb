@@ -10,7 +10,8 @@ class Inventory < ApplicationRecord
   end
 
   def instance_to_json
-      {   id: self.id,
+      {   account_id: self.account.id,
+          id: self.id,
           name: self.name,
           date: self.date,
           inventory_items: self.recordeds.arrr_to_json

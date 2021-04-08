@@ -11,7 +11,8 @@ class Account < ApplicationRecord
   end
 
   def instance_to_json
-      {   id: self.id,
+      {   region_id: self.region.id,
+          id: self.id,
           name: self.name,
           city: self.city,
           inventories: self.inventories.arri_to_json
